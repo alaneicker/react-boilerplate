@@ -30,6 +30,7 @@ const config = {
     libraryTarget: 'umd',
     globalObject: 'this',
     filename: path.join(relativeDistJsDir, '[name].min.js'),
+    chunkFilename: path.join(relativeDistJsDir, '[name].chunk.min.js'),
   },
   resolve: {
     modules: [rootDir, nodeModDir],
@@ -74,6 +75,9 @@ const config = {
     ],
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     minimizer: [
       new TerserJsPlugin({
         cache: true,
@@ -91,7 +95,7 @@ const config = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     prod ? new webpack.HashedModuleIdsPlugin() : new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+    new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 5 }),
     new MiniCssExtractPlugin({
       filename: path.join(relativeDistStylesDir, '[name].css'),
       chunkFilename: path.join(relativeDistStylesDir, '[name].css'),
