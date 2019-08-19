@@ -14,10 +14,11 @@ const nodeModDir = path.resolve(__dirname, 'node_modules');
 const distDir = path.resolve(__dirname, 'dist');
 const publicDir = path.resolve(__dirname, 'public');
 
+const indexEntry = path.join(srcDir, 'index.js');
+const publicEntry = path.join(publicDir, 'index.html');
+
 const relativeDistJsDir = 'assets/js';
 const relativeDistStylesDir = 'assets/styles';
-
-const indexEntry = path.join(srcDir, 'index.js');
 
 const prod = process.env.NODE_ENV === 'prod';
 
@@ -77,6 +78,11 @@ const config = {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          reuseExistingChunk: true,
+        }
+      },
     },
     minimizer: [
       new TerserJsPlugin({
@@ -103,7 +109,7 @@ const config = {
     new HtmlWebpackPlugin({
       hot: true,
       inject: true,
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: publicEntry,
     }),
   ],
 };
