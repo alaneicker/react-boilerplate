@@ -8,10 +8,10 @@ module.exports = {
     '<rootDir>/node_modules',
   ],
   'setupFiles': [
-    '<rootDir>/"jestConfigs/setup.js',
+    '<rootDir>/jestConfigs/setup.js',
   ],
   'setupFilesAfterEnv': [
-    '<rootDir>/"jestConfigs/setupAfterEnv.js',
+    '<rootDir>/jestConfigs/setupAfterEnv.js',
   ],
   'collectCoverageFrom': [
     'src/**/*.{js,jsx,ts,tsx}',
@@ -27,7 +27,7 @@ module.exports = {
   'transform': {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     '^.+\\.css$': 'babel-jest',
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '<rootDir>/"jestConfigs/fileTransform.js',
+    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '<rootDir>/jestConfigs/fileTransform.js',
   },
   'transformIgnorePatterns': [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
