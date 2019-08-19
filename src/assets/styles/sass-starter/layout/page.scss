@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  // &__header {
+    
+  // }
+
+  &__body {
+    height: calc(100% - pixify($header-height));
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+}
