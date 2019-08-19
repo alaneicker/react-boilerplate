@@ -7,7 +7,7 @@
     "start:dev": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
     "start:prod": "webpack --mode=production --env.NODE_ENV=prod",
     "build": "webpack --mode=production --env.NODE_ENV=prod",
-    "test": "jest --coverage --config=./testConfigs/jest.config.js"
+    "test": "jest --coverage --config=./jestConfigs/jest.config.js"
   },
   "author": "Alan Eicker",
   "license": "MIT",
