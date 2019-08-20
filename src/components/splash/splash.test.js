@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Home from './';
+import Splash from '.';
 
-describe('Home', () => {
+describe('Splash', () => {
   it('Should render without errors', () => {
-    const component = shallow(<Home />);
+    const component = shallow(<Splash />);
     expect(component).toHaveLength(1);
   });
 });
