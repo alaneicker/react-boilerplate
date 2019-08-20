@@ -28,7 +28,7 @@ const mapStateToProps = ({ splashReducer }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    upadateSplashContent(payload) {
+    onUpdateSplash(payload) {
       dispatch(updateSplash(payload));
     },
   };
