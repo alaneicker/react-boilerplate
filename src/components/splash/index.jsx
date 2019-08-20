@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateSplash } from '../../actions';
+import { updateSplash } from './splash.action';
 import './splash.scss';
 
 export const Splash = (props) => {
