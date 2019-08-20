@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
     "build": "webpack --mode=production --env.NODE_ENV=prod",
-    "test": "jest --coverage --config=./jestConfigs/jest.config.js",
+    "test": "jest --watch --coverage --config=./jestConfigs/jest.config.js",
     "lint": "eslint 'src/**/*.js' --ignore-pattern '*.test.js'"
   },
   "repository": "https://github.com/alaneicker/react-boilerplate",
