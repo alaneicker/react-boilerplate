@@ -17,8 +17,8 @@ const Splash = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { splashTitle, splashSubtitle } = state.splashReducer;
+const mapStateToProps = ({ splashReducer }) => {
+  const { splashTitle, splashSubtitle } = splashReducer;
 
   return {
     splashTitle,
