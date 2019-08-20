@@ -14,18 +14,19 @@
     text-align: center;
 
     h1 {
-      font-size: rem(60);
+      font-size: rem(50);
       font-weight: $font-extra-bold;
-      line-height: 1;
+      line-height: 1.2;
     }
 
     p {
-      font-size: rem(25);
+      font-size: rem(20);
+      line-height: 1.5;
       margin-top: rem(16);
     }
 
     img {
-      width: rem(180);
+      width: rem(100);
       margin-bottom: rem(16);
     }
   }
