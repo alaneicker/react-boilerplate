@@ -1,4 +1,20 @@
 @import 
+  // Sass starter
   'sass-starter/main',
-  'reset',
-  './base';
+  
+  // Abstracts
+  'app/abstracts/variables',
+
+  // Base
+  'app/base/reset',
+  'app/base/base',
+
+  // Images
+  'app/layout/page',
+  
+  // Layout
+  'app/layout/page',
+
+  // Header
+  'app/header/header-nav',
+  'app/header/header-logo';

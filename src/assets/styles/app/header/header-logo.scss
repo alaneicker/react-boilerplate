@@ -1,0 +1,13 @@
+.header-logo {
+  color: $white;
+  text-decoration: none;
+  font-size: rem(22);
+  font-weight: $font-bold;
+  line-height: rem($header-height);
+  text-transform: uppercase;
+  padding: rem(0 16);
+
+  &:hover {
+    color: $white;
+  }
+}

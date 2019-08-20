@@ -8,6 +8,7 @@
     "build": "webpack --mode=production --env.NODE_ENV=prod",
     "test": "jest --coverage --config=./jestConfigs/jest.config.js"
   },
+  "repository": "https://github.com/alaneicker/react-boilerplate",
   "author": "Alan Eicker",
   "license": "MIT",
   "dependencies": {
