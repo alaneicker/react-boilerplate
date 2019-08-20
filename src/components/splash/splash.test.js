@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import store from '../../reducers';
 
 import Splash from '.';
@@ -12,6 +13,6 @@ describe('Splash', () => {
         <Splash />
       </Provider>
     );
-    expect(component).toHaveLength(1);
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 });
