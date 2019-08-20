@@ -4,7 +4,7 @@
   "description": "A React Boilerplate",
   "main": "dist/index",
   "scripts": {
-    "start:dev": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
+    "start": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
     "build": "webpack --mode=production --env.NODE_ENV=prod",
     "test": "jest --coverage --config=./jestConfigs/jest.config.js"
   },
@@ -20,7 +20,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1"
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
