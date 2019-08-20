@@ -8,16 +8,4 @@
     display: flex;
     align-items: center;
   }
-  
-  &__body {
-    height: calc(100% - pixify($header-height));
-    overflow: auto;
-    scroll-behavior: smooth;
-  }
-
-  &__content {
-    max-width: rem($site-width);
-    margin: 0 auto;
-    padding: rem(16);
-  }
 }

@@ -4,7 +4,7 @@ import './home.scss';
 const Home = () => {
   return (
     <Fragment>
-      <h1>Home Page</h1>
+      Home page content...
     </Fragment>
   );
 };
