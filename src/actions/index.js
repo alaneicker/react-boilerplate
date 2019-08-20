@@ -4,5 +4,5 @@ export const updateSplash = (payload) => {
   return {
     type: UPDATE_SPLASH_CONTENT,
     payload,
-  }
+  };
 };

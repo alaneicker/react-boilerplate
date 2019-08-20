@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
     "build": "webpack --mode=production --env.NODE_ENV=prod",
-    "test": "jest --coverage --config=./jestConfigs/jest.config.js"
+    "test": "jest --coverage --config=./jestConfigs/jest.config.js",
+    "lint": "eslint 'src/**/*.js' --ignore-pattern '*.test.js'"
   },
   "repository": "https://github.com/alaneicker/react-boilerplate",
   "author": "Alan Eicker",
@@ -42,7 +43,11 @@
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.2.1",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
     "git": "^0.1.5",
     "html-webpack-plugin": "^3.2.0",
