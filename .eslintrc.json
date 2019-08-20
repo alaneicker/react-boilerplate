@@ -2,8 +2,5 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint-config-airbnb"
-  ],
-  "rules": {
-    "arrow-body-style": "off"
-  }
+  ]
 }

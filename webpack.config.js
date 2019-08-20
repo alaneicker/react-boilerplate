@@ -14,7 +14,7 @@ const nodeModDir = path.resolve(__dirname, 'node_modules');
 const distDir = path.resolve(__dirname, 'dist');
 const publicDir = path.resolve(__dirname, 'public');
 
-const indexEntry = path.join(srcDir, 'index.js');
+const indexEntry = path.join(srcDir, 'index.jsx');
 const publicEntry = path.join(publicDir, 'index.html');
 
 const relativeDistJsDir = 'assets/js';
