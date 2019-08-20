@@ -1,4 +1,4 @@
-import { UPDATE_SPLASH_CONTENT } from './splash.action';
+import { UPDATE_SPLASH_CONTENT } from './splash.actions';
 
 const initialState = {
   splashTitle: 'React Boilerplate',
