@@ -1,4 +1,4 @@
-import Enzyme from 'enzyme/build'; // eslint-disable-line
-import Adapter from 'enzyme-adapter-react-16/build'; // eslint-disable-line
+import Enzyme from 'enzyme/build';
+import Adapter from 'enzyme-adapter-react-16/build';
 
 Enzyme.configure({ adapter: new Adapter() });
