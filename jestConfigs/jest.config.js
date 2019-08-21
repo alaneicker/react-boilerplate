@@ -32,7 +32,7 @@ module.exports = {
   'transformIgnorePatterns': [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
     '^.+\\.module\\.(css|sass|scss)$',
-    'src/index.js',
+    //'src/index.js',
   ],
   'moduleFileExtensions': [
     'web.js',
