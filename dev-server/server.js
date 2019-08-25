@@ -8,6 +8,7 @@ import { StaticRouter } from 'react-router-dom';
 
 import App from '../src/components/app';
 
+const isProd = process.env.NODE_ENV === 'production';
 const PORT = process.env.PORT || 9000;
 const app = express();
 
