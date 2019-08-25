@@ -4,9 +4,10 @@
   "description": "A React Boilerplate",
   "scripts": {
     "start": "node server/index.js",
-    "start:node": "nodemon server/index.js",
+    "start:node": "nodemon --exec babel-node server",
     "start:client": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 9000 --open",
     "build": "webpack --mode=production --env.NODE_ENV=prod",
+    "build:server": "babel -d ./server/server ./server -s",
     "test": "jest --watchAll --coverage --config=./jestConfigs/jest.config.js",
     "lint": "eslint 'src/**/*.js' --ignore-pattern '*.test.js'"
   },
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
