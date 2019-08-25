@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateSplash } from './splash.actions';
-import './splash.scss';
 
 export const Splash = (props) => {
   const { splashTitle, splashSubtitle } = props;

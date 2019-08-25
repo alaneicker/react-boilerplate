@@ -9,9 +9,9 @@ import { StaticRouter } from 'react-router-dom';
 import App from '../src/components/app';
 
 const isProd = process.env.NODE_ENV === 'production';
+const staticPath = isProd ? path.resolve(__dirname, '..') : path.resolve(__dirname, '..', 'dist');
 const PORT = process.env.PORT || 9000;
 const app = express();
-
 const router = express.Router();
 
 const serverRenderer = (req, res, next) => {
@@ -38,7 +38,7 @@ const serverRenderer = (req, res, next) => {
 router.use('^/$', serverRenderer);
 
 router.use(
-  express.static(path.resolve(__dirname, '..', 'dist'), { maxAge: '30d' })
+  express.static(staticPath, { maxAge: '30d' })
 );
 
 app.use(router);

@@ -3,7 +3,6 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Splash from '../splash';
-import '../../assets/styles/app.scss';
 
 import splashReducer from '../splash/splash.reducer';
 
