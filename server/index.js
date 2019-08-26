@@ -17,6 +17,7 @@ const router = express.Router();
 
 const serverRenderer = (req, res) => {
   const context = {};
+
   fs.readFile(indexPath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
@@ -45,5 +46,5 @@ router.use(
 app.use(router);
 
 app.listen(PORT, () => {
-  console.log(`SSR running on port ${PORT}`);
+  console.log(`App running on port ${PORT}`);
 });
