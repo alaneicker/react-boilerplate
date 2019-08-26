@@ -16,7 +16,6 @@
   "author": "Alan Eicker",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
     "axois": "^1.0.0",
     "classnames": "^2.2.6",
     "core-js": "^3.2.1",
