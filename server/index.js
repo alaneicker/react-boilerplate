@@ -10,13 +10,14 @@ import App from '../src/components/app';
 
 const isProd = process.env.NODE_ENV === 'production';
 const staticPath = isProd ? path.resolve(__dirname, '..') : path.resolve(__dirname, '..', 'dist');
+const indexPath = path.resolve('./dist/index.html');
 const PORT = process.env.PORT || 9000;
 const app = express();
 const router = express.Router();
 
-const serverRenderer = (req, res, next) => {
+const serverRenderer = (req, res) => {
   const context = {};
-  fs.readFile(path.resolve('./dist/index.html'), 'utf8', (err, data) => {
+  fs.readFile(indexPath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
       return res.status(500).send('An error occurred');
