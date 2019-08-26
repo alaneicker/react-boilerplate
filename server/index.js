@@ -31,7 +31,7 @@ const serverRenderer = (req, res, next) => {
       )
     );
 
-    return res.send(pretty(renderedMarkup));
+    return res.send(pretty(renderedMarkup, {ocd: true}));
   });
 };
 
