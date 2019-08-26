@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
-
 import express from 'express';
+import pretty from 'pretty';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
@@ -22,16 +22,16 @@ const serverRenderer = (req, res, next) => {
       return res.status(500).send('An error occurred');
     }
 
-    return res.send(
-      data.replace(
-        '__ROOT__',
-        ReactDOMServer.renderToString(
-          <StaticRouter location={req.url} context={context}>
-            <App />
-          </StaticRouter>
-        )
+    const renderedMarkup = data.replace(
+      '__ROOT__',
+      ReactDOMServer.renderToString(
+        <StaticRouter location={req.url} context={context}>
+          <App />
+        </StaticRouter>
       )
     );
+
+    return res.send(pretty(renderedMarkup));
   });
 };
 
