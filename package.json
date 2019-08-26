@@ -6,9 +6,9 @@
     "start": "NODE_ENV=production node dist/server/index.js",
     "start:ssr-dev": "NODE_ENV=development nodemon --exec babel-node server",
     "start:client-dev": "NODE_ENV=development webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 4000 --open",
-    "build": "BABEL_ENV=node NODE_ENV=production webpack --mode=production --env.NODE_ENV=prod && npm run build:server && npm run build:app",
+    "build": "BABEL_ENV=node NODE_ENV=production webpack --mode=production --env.NODE_ENV=prod && npm run build:server && npm run build:src",
     "build:server": "babel -d ./dist/server ./server -s",
-    "build:app": "babel -d ./dist/src ./src -s",
+    "build:src": "babel -d ./dist/src ./src -s",
     "test": "jest --watchAll --coverage --config=./jestConfigs/jest.config.js",
     "lint": "eslint 'src/**/*.js' --ignore-pattern '*.test.js'"
   },
