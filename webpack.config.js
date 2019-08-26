@@ -78,11 +78,6 @@ const config = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      cacheGroups: {
-        vendors: {
-          reuseExistingChunk: true,
-        }
-      },
     },
     minimizer: [
       new TerserJsPlugin({
