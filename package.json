@@ -4,8 +4,8 @@
   "description": "A React Boilerplate",
   "scripts": {
     "start": "NODE_ENV=production node dist/server/index.js",
-    "start:node": "nodemon --exec babel-node server",
-    "start:client": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 4000 --open",
+    "start:ssr-dev": "nodemon --exec babel-node server",
+    "start:client-dev": "webpack-dev-server --mode=development --env.NODE_ENV=dev --content-base public/ ---port 4000 --open",
     "build": "BABEL_ENV=node NODE_ENV=production webpack --mode=production --env.NODE_ENV=prod && npm run build:server && npm run build:app",
     "build:server": "babel -d ./dist/server ./server -s",
     "build:app": "babel -d ./dist/src ./src -s",
