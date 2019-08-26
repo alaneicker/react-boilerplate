@@ -15,12 +15,8 @@
     ["@babel/plugin-transform-runtime", { "corejs": 3 }],
   ],
   "env": {
-    "test": {
-      "plugins": [["filter-imports", {
-        "imports": {
-          "splash.scss": [ "styles" ]
-        }
-      }]],
+    "node": {
+      "plugins": ["babel-plugin-ignore-html-and-css-imports"],
     },
   },
 }

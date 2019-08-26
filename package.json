@@ -8,7 +8,7 @@
     "start:client-dev": "webpack-dev-server --mode=development --env.NODE_ENV=development --content-base public/ ---port 4000 --open",
     "build": "webpack --mode=production --env.NODE_ENV=production && npm run build:server && npm run build:src",
     "build:server": "babel -d ./dist/server ./server -s",
-    "build:src": "babel -d ./dist/src ./src -s --plugins babel-plugin-ignore-html-and-css-imports",
+    "build:src": "BABEL_ENV=node babel -d ./dist/src ./src -s",
     "test": "jest --watchAll --coverage --config=./jestConfigs/jest.config.js",
     "lint": "eslint 'src/**/*.js' --ignore-pattern '*.test.js'"
   },
