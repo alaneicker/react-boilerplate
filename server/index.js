@@ -25,7 +25,7 @@ const serverRenderer = (req, res) => {
     }
 
     const renderedApp = data.replace(
-      '__ROOT__',
+      '<div id="root"></div>',
       ReactDOMServer.renderToString(
         <StaticRouter location={req.url} context={context}>
           <App />
