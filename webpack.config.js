@@ -30,8 +30,8 @@ const config = {
     path: distDir,
     libraryTarget: 'umd',
     globalObject: 'this',
-    filename: path.join(relativeDistJsDir, '[name].min.js'),
-    chunkFilename: path.join(relativeDistJsDir, '[name].chunk.min.js'),
+    filename: path.join(relativeDistJsDir, '[name].[hash].min.js'),
+    chunkFilename: path.join(relativeDistJsDir, '[name].[hash].chunk.min.js'),
   },
   resolve: {
     modules: [rootDir, nodeModDir],
@@ -103,8 +103,8 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 5 }),
     new MiniCssExtractPlugin({
-      filename: path.join(relativeDistStylesDir, '[name].css'),
-      chunkFilename: path.join(relativeDistStylesDir, '[name].css'),
+      filename: path.join(relativeDistStylesDir, '[name].[hash].css'),
+      chunkFilename: path.join(relativeDistStylesDir, '[name].[hash].css'),
     }),
     new HtmlWebpackPlugin({
       hot: true,
