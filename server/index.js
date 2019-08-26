@@ -24,7 +24,7 @@ const serverRenderer = (req, res) => {
       return res.status(500).send('An error occurred');
     }
 
-    const renderedMarkup = data.replace(
+    const renderedApp = data.replace(
       '__ROOT__',
       ReactDOMServer.renderToString(
         <StaticRouter location={req.url} context={context}>
@@ -33,7 +33,7 @@ const serverRenderer = (req, res) => {
       )
     );
 
-    return res.send(pretty(renderedMarkup, {ocd: true}));
+    return res.send(pretty(renderedApp, {ocd: true}));
   });
 };
 
