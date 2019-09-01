@@ -1,6 +1,6 @@
 # React Project Boilerplate
 
-A project boilerplate that supports both client-sise and server-side React applications.
+A project boilerplate that supports both client-side and server-side React applications.
 
 ### Setup
 
