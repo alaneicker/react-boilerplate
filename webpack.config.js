@@ -33,6 +33,7 @@ const config = {
     globalObject: 'this',
     filename: path.join(relativeDistJsDir, '[name].[hash].min.js'),
     chunkFilename: path.join(relativeDistJsDir, '[name].[hash].chunk.min.js'),
+    publicPath: '/',
   },
   resolve: {
     modules: [rootDir, nodeModDir],
@@ -75,6 +76,9 @@ const config = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   optimization: {
     splitChunks: {
