@@ -5,7 +5,7 @@
   "scripts": {
     "start": "NODE_ENV=production node dist/server/index.js",
     "start:dev": "webpack-dev-server --mode=development --env.NODE_ENV=development --content-base public/ ---port 4000 --open",
-    "build": "webpack --mode=production --env.NODE_ENV=production && npm run build:server && npm run build:src",
+    "build": "webpack --mode=production --env.NODE_ENV=production && npm run build:server && npm run build:src && mv dist/index.html dist/template.html",
     "build:server": "babel -d ./dist/server ./server -s",
     "build:src": "BABEL_ENV=node babel -d ./dist/src ./src -s",
     "test": "jest --watchAll --coverage --config=./jestConfigs/jest.config.js",

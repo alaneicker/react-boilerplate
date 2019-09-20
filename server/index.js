@@ -8,39 +8,33 @@ import { StaticRouter } from 'react-router-dom';
 
 import App from '../src/components/app';
 
-const isProd = process.env.NODE_ENV === 'production';
-const staticPath = isProd ? path.resolve(__dirname, '..') : path.resolve(__dirname, '..', 'dist');
-const indexPath = path.resolve('./dist/index.html');
+const staticPath = path.resolve(__dirname, '..');
+
+const indexPath = path.resolve(staticPath, 'template.html');
 const PORT = process.env.PORT || 9000;
 const app = express();
 
-const serverRenderer = (req, res) => {
-  const context = {};
+app.use(express.static(staticPath));
 
-  fs.readFile(indexPath, 'utf8', (err, data) => {
+app.get('/*', (req, res) => { // '^/$'
+  const app = ReactDOMServer.renderToString(
+    <StaticRouter location={req.url} context={{}}>
+      <App />
+    </StaticRouter>
+  );
+
+  const indexFile = path.resolve(indexPath);
+  fs.readFile(indexFile, 'utf8', (err, data) => {
     if (err) {
-      console.error(err);
-      return res.status(500).send('An error occurred');
+      console.error('Something went wrong:', err);
+      return res.status(500).send('Oops, better luck next time!');
     }
 
-    const renderedApp = data.replace(
-      '<div id="root"></div>',
-      ReactDOMServer.renderToString(
-        <StaticRouter location={req.url} context={context}>
-          <App />
-        </StaticRouter>
-      )
+    return res.send(
+      pretty(data.replace('<div id="root"></div>', `<div id="root">${app}</div>`), { ocd: true })
     );
-
-    return res.send(pretty(renderedApp, {ocd: true}));
   });
-};
-
-app.use(
-  express.static(staticPath, { maxAge: '30d' })
-);
-
-app.get('*', serverRenderer);
+});
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
