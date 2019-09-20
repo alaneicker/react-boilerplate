@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import Splash from '../splash';
@@ -13,9 +13,7 @@ const store = createStore(combineReducers({
 const App = () => {
   return (
     <Provider store={store}>
-      <Router>
-        <Route path="/" exact component={Splash} />
-      </Router>
+      <Route path="/" exact component={Splash} />
     </Provider>
   );
 };

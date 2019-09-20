@@ -13,7 +13,6 @@ const staticPath = isProd ? path.resolve(__dirname, '..') : path.resolve(__dirna
 const indexPath = path.resolve('./dist/index.html');
 const PORT = process.env.PORT || 9000;
 const app = express();
-const router = express.Router();
 
 const serverRenderer = (req, res) => {
   const context = {};
@@ -37,13 +36,11 @@ const serverRenderer = (req, res) => {
   });
 };
 
-router.use('^/$', serverRenderer);
-
-router.use(
+app.use(
   express.static(staticPath, { maxAge: '30d' })
 );
 
-app.use(router);
+app.get('*', serverRenderer);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
