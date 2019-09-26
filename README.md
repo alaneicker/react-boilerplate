@@ -6,13 +6,13 @@ A project boilerplate that supports both client-side and server-side React appli
 
 `npm install`
 
-### Run local clinet-side dev environment
+### Run dev environment
 
-`npm run start:client-dev`
+`npm run start:dev`
 
-### Run local server-side dev environment
+### Run production environment
 
-`npm run start:ssr-dev`
+`npm run start`
 
 ### Build project
 
@@ -21,7 +21,3 @@ A project boilerplate that supports both client-side and server-side React appli
 ### Run test
 
 `npm run test`
-
-### Run production server
-
-`npm run start`
