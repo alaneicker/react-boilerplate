@@ -96,6 +96,9 @@ const config = {
       new OptimizeCssAssetsPlugin(),
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [distDir] }),
     new webpack.optimize.OccurrenceOrderPlugin(),
