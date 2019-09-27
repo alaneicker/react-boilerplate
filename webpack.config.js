@@ -21,7 +21,7 @@ const publicEntry = path.join(publicDir, 'index.html');
 const relativeDistJsDir = 'assets/js';
 const relativeDistStylesDir = 'assets/styles';
 
-const prod = process.env.NODE_ENV === 'prod';
+const prod = process.env.NODE_ENV === 'production';
 
 const config = {
   entry: [
