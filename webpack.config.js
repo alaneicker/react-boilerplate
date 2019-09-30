@@ -38,7 +38,7 @@ const config = {
   },
   resolve: {
     modules: [rootDir, nodeModDir],
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   devtool: 'source-map',
   target: 'web',
