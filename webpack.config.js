@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoPrefixer = require('autoprefixer');
 const TerserJsPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const highlight = require('highlight.js');
 
 const rootDir = path.resolve(__dirname);
 const srcDir = path.resolve(__dirname, 'src');
@@ -52,6 +53,34 @@ const config = {
         test: /\.(s?css|sass)$/,
         exclude: /[\\/]node_modules[\\/]/,
         use: [
+          {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+              },
+            ],
+          },
+          {
+            test: /\.(md)$/,
+            use: [
+              {
+                loader: 'html-loader',
+              },
+              {
+                loader: 'markdown-loader',
+                options: {
+                  highlight: (code, lang) => {
+                    if (!lang || ['text', 'literal', 'nohighlight'].includes(lang)) {
+                      return `<pre class="hljs">${code}</pre>`;
+                    }
+                    const html = highlight.highlight(lang, code).value;
+                    return `<span class="hljs">${html}</span>`;
+                  },
+                },
+              },
+            ],
+          },
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
