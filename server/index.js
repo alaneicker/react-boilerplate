@@ -4,8 +4,9 @@ import express from 'express';
 import pretty from 'pretty';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
-
+import store from '../src/store';
 import App from '../src/components/app';
 
 const staticPath = path.resolve(__dirname, '..');
@@ -18,9 +19,11 @@ app.use(express.static(staticPath));
 
 app.get('/*', (req, res) => { // '^/$'
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location={req.url} context={{}}>
-      <App />
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={{}}>
+        <App />
+      </StaticRouter>
+    </Provider>
   );
 
   const indexFile = path.resolve(indexPath);

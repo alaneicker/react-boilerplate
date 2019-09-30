@@ -1,20 +1,12 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import React, { Fragment } from 'react';
+import { Route } from 'react-router-dom';
 import Splash from '../splash';
-
-import splashReducer from '../splash/splash.reducer';
-
-const store = createStore(combineReducers({
-  splashReducer,
-}));
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <Fragment>
       <Route path="/" exact component={Splash} />
-    </Provider>
+    </Fragment>
   );
 };
 
