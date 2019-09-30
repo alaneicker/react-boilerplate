@@ -47,40 +47,42 @@ const config = {
       {
         test: /\.(js|jsx?)$/,
         exclude: /[\\/]node_modules[\\/]/,
-        use: ['babel-loader'],
+        use: [
+          { loader: 'babel-loader' },
+        ],
+      },
+      {
+        test: /\.(svg|png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(md)$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              highlight: (code, lang) => {
+                if (!lang || ['text', 'literal', 'nohighlight'].includes(lang)) {
+                  return `<pre class="hljs">${code}</pre>`;
+                }
+                const html = highlight.highlight(lang, code).value;
+                return `<span class="hljs">${html}</span>`;
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(s?css|sass)$/,
         exclude: /[\\/]node_modules[\\/]/,
         use: [
-          {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-              {
-                loader: 'file-loader',
-              },
-            ],
-          },
-          {
-            test: /\.(md)$/,
-            use: [
-              {
-                loader: 'html-loader',
-              },
-              {
-                loader: 'markdown-loader',
-                options: {
-                  highlight: (code, lang) => {
-                    if (!lang || ['text', 'literal', 'nohighlight'].includes(lang)) {
-                      return `<pre class="hljs">${code}</pre>`;
-                    }
-                    const html = highlight.highlight(lang, code).value;
-                    return `<span class="hljs">${html}</span>`;
-                  },
-                },
-              },
-            ],
-          },
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
@@ -124,9 +126,6 @@ const config = {
       }),
       new OptimizeCssAssetsPlugin(),
     ],
-  },
-  devServer: {
-    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [distDir] }),
