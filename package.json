@@ -15,7 +15,7 @@
   "author": "Alan Eicker",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "core-js": "^3.2.1",
     "express": "^4.17.1",
